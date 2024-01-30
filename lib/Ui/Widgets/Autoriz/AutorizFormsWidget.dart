@@ -105,7 +105,7 @@ class PasswordWidget extends StatelessWidget {
     final model = context.watch<AutorizFormsWidgetModel>();
     return  TextField(
       obscureText: !model!.showPassword,
-      onChanged: (value) => model?.user.passoword = value, //Дописать проверку на пароль
+      onChanged: (value) => model?.user.password = value, //Дописать проверку на пароль
       decoration: InputDecoration(
         hintText: 'Пароль',
         suffixIcon: IconButton(
@@ -132,17 +132,7 @@ class StackButtonWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () =>
         {
-          model?.ExaminationError(),
-          if (model?.error != null)
-            {
-              ShowSnackError(context, model!.error!),
-            }
-          else
-            {
-              model?.UserVerification(),
-              Navigator.pushNamedAndRemoveUntil(
-                  context, NavigatorRouse.hub, (route) => true),
-            }
+          model?.UserVerification(context),
         },
         child: Container(
           decoration: const BoxDecoration(

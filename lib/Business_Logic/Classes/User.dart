@@ -1,7 +1,7 @@
-class User {
+class UserApp {
      String name = '';
      String email = '';
-     String passoword = '';
+     String password = '';
      String repleyPassword = '';
 
 }

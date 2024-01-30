@@ -100,17 +100,7 @@ class StackButtonWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () =>
         {
-          model?.ExaminationError(),
-          if (model?.error != null)
-            {
-              ShowSnackError(context, model!.error!),
-            }
-          else
-            {
-              model?.UserEmailVerification(),
-              Navigator.pushNamedAndRemoveUntil(
-                  context, NavigatorRouse.passUpdate, (route) => true),
-            }
+              model?.UserEmailVerification(context),
         },
         child: Container(
           decoration: const BoxDecoration(

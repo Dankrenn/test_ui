@@ -117,7 +117,7 @@ class PasswordWidget extends StatelessWidget {
     final model = context.watch<RegistFormsWidgetModel>();
     return TextField(
       obscureText: !model!.showPassword,
-      onChanged: (value) => model?.user.passoword = value,
+      onChanged: (value) => model?.user.password = value,
       decoration: InputDecoration(
         hintText: 'Пароль',
         suffixIcon: IconButton(
@@ -165,17 +165,7 @@ class StackButtonWidget extends StatelessWidget {
       bottom: 1,
       child: GestureDetector(
         onTap: () => {
-          model?.ExaminationError(),
-          if (model?.error != null)
-            {
-              ShowSnackError(context, model!.error!),
-            }
-          else
-            {
-              model?.SaveUser(),
-              Navigator.pushNamedAndRemoveUntil(
-                  context, NavigatorRouse.hub, (route) => false),
-            }
+          model?.SaveUser(context),
         },
         child: Container(
           decoration: const BoxDecoration(

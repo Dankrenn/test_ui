@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "817339218625",
+    "project_id": "testui-11a5e",
+    "storage_bucket": "testui-11a5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817339218625:android:c4db60edbdc4a9d398f240",
+        "android_client_info": {
+          "package_name": "com.example.test_ui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfYLfAUSEF6xDR6ABunYlUbr9C8M-OXVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

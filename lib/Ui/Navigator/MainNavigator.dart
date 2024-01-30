@@ -5,7 +5,6 @@ import 'package:test_ui/Ui/Widgets/Hub/HubFormsWidget.dart';
 import 'package:test_ui/Ui/Widgets/PassUpdate/PasswordUpdateWidget.dart';
 
 import '../Widgets/Autoriz/AutorizFormsWidget.dart';
-import '../Widgets/PassUpdate/NewPassvordForms/NewPassvordFormsWidget.dart';
 import '../Widgets/Registr/RegistrFormsWidget.dart';
 
 abstract class NavigatorRouse {
@@ -18,14 +17,13 @@ abstract class NavigatorRouse {
 }
 
 class MainNavigator {
-  String initialRoute = NavigatorRouse.hub;
+  String initialRoute = NavigatorRouse.autoriz;
 
   Map<String, WidgetBuilder> routes = {
     NavigatorRouse.autoriz: (context) => AutorizFormsWidget(),
     NavigatorRouse.registr: (context) => RegistrFormsWidget(),
     NavigatorRouse.verificationEmail: (context) => PasswordUpdateWidget(),
     NavigatorRouse.hub: (context) => HubFormsWidget(),
-    NavigatorRouse.passUpdate: (context) => NewPasswordFormsWidget(),
     NavigatorRouse.dialog: (context) => DialogFormsWidget(),
   };
 }

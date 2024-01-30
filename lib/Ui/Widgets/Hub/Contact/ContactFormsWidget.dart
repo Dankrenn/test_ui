@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
+import 'package:test_ui/Ui/Navigator/MainNavigator.dart';
 import 'package:test_ui/Ui/Setting/ColorStyle.dart';
 import 'package:test_ui/Ui/Setting/TextStyle.dart';
 
@@ -16,7 +17,8 @@ class ContactFormsWidget extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.exit_to_app,color: ColorStyleSetting.colorGray,),
-            onPressed: () {},
+            onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                context, NavigatorRouse.registr, (route) => false),
           ),
         ],
       ),
@@ -37,6 +39,7 @@ class ProfileTab extends StatelessWidget {
         const AvatarWidget(),
         const SizedBox(height: 20),
         const UserInfoWidget(),
+        const SizedBox(height: 10),
         const TabBarWidget(),
         const SizedBox(height: 20),
       ],
@@ -106,12 +109,23 @@ class TabBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ProfileButton(icon: Icons.people, label: 'Друзья'),
-        ProfileButton(icon: Icons.photo, label: 'Галерея'),
-        ProfileButton(icon: Icons.post_add, label: 'Посты'),
+        Container(
+          height: 60,
+          width: 350,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              ProfileButton(icon: Icons.people, label: 'Друзья'),
+              SizedBox(width: 10, height: 10,),
+              ProfileButton(icon: Icons.photo, label: 'Галерея'),
+              SizedBox(width: 10, height: 10,),
+              ProfileButton(icon: Icons.post_add, label: 'Посты'),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -147,3 +161,5 @@ class ProfileButton extends StatelessWidget {
     );
   }
 }
+
+
